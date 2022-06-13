@@ -42,7 +42,17 @@ function DetailPoke({ pokemon }) {
 
     return (
         <>
-            <Button style={{backgroundColor: '#284D63', color: 'white'}} onClick={onOpen}>See Pokemon</Button>
+            <Button
+                bgColor={'#38627a'}
+                color={"white"}
+                _hover={{
+                    backgroundColor: 'white',
+                    color: '#38627a'
+                }}
+                onClick={onOpen}>
+
+                See Pokemon
+            </Button>
 
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
@@ -71,7 +81,16 @@ function DetailPoke({ pokemon }) {
                     </ModalBody>
 
                     <ModalFooter>
-                        <Button style={{backgroundColor: '#FD1956'}} onClick={onClose}>
+                        <Button
+                            onClick={onClose}
+                            bgColor={'#284D63'}
+                            color={'#fff'}
+                            _hover={{
+                                backgroundColor: 'darkred',
+                                // color: '#284D63'
+                            }}
+                            >
+                            
                             Close
                         </Button>
                     </ModalFooter>

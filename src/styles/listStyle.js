@@ -28,11 +28,15 @@ export const MarcaPaginas = styled.div`
     justify-content: center;
     gap: 10px;
 
+    button.next{
+        transform: scale(1.1);
+    }
+
     button{ 
         padding: 10px 20px;
         border-radius: 4px;
         border: none;
-        background-color: #0C1956;
+        background-color: #38627a;
         font-size: 17px;
         color: #ffff;
         transition: .3s;
@@ -41,7 +45,14 @@ export const MarcaPaginas = styled.div`
             cursor: pointer;
             transform: scale(1.1);
         }
+
+        &:active{
+            background-color: #1e4256;
+            transform: scale(1);
+        }
     }
+
+    
 `
 
 export const PokeCardDetail = styled.div`

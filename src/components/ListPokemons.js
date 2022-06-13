@@ -1,4 +1,3 @@
-import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getData } from '../redux/actions/PokemonActions'
@@ -15,30 +14,14 @@ const ListPokemons = () => {
 		limit: 20,
 	})
 
-	const [loading, setLoading] = useState(true)
-
-	const { page, data, img, limit } = pokemon
+	const { page, limit } = pokemon
 
 	const { pokemonList } = useSelector(store => store.pokemon)
 
 	useEffect(() => {
 		dispatch(getData(page, limit))
-		// if (pokemonList.length === 0) {
-		// 	setLoading(true)
-		// }
-		// setLoading(false)
 
 	}, [page, limit, dispatch])
-
-	// if (loading === true) {
-	// 	return (
-	// 		<div>
-	// 			<p style={{ textAlign: 'center', margin: '20%' }}>Pokeloading...</p>
-	// 		</div>
-	// 	)
-	// }
-
-	// console.log(img)
 
 	function nextPage() {
 		if (page === 0) {
@@ -84,8 +67,8 @@ const ListPokemons = () => {
 
 
 			<MarcaPaginas>
-				{page === 0 ? null : <button className='back' onClick={returnPage}>Atras</button>}
-				<button className='next' onClick={nextPage}>Siguiente</button>
+				{page === 0 ? null : <button className='back' onClick={returnPage}>Previus</button>}
+				<button className='next' onClick={nextPage}>Next</button>
 			</MarcaPaginas>
 		</>
 	)
